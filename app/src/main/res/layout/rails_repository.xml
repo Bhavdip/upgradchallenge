@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <data class="RepositoryDataBinding">
+        <variable
+            name="viewmodel"
+            type="com.android.upgrad.RepositoryViewModel"/>
+    </data>
+
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/openIssuesList"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
+
+</layout>

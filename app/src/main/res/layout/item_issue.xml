@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data class="ItemOpenIssue">
+
+        <variable
+            name="viewmodel"
+            type="com.android.upgrad.viewmodel.ItemIssueViewModel" />
+    </data>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="16dp">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:maxLines="2"
+            android:text="@{viewmodel.issueTitle}"
+            android:textColor="@android:color/black"
+            android:textSize="16sp"
+            tools:text="Allow MessageEncryptor to take advantage authenticated encryption modes #25874" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:maxLines="1"
+            android:text="@{viewmodel.reporterName}"
+            android:textColor="@android:color/darker_gray"
+            tools:text="#25874 opened 2 days ago by bdewater" />
+    </LinearLayout>
+</layout>
