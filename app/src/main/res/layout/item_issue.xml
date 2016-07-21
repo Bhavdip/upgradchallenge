@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:expandableTextView="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools">
 
     <data class="ItemOpenIssue">
@@ -12,24 +13,61 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="vertical"
-        android:padding="16dp">
+        android:orientation="vertical">
 
-        <TextView
+        <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:maxLines="2"
-            android:text="@{viewmodel.issueTitle}"
-            android:textColor="@android:color/black"
-            android:textSize="16sp"
-            tools:text="Allow MessageEncryptor to take advantage authenticated encryption modes #25874" />
+            android:orientation="vertical"
+            android:padding="16dp">
 
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:maxLines="1"
-            android:text="@{viewmodel.reporterName}"
-            android:textColor="@android:color/darker_gray"
-            tools:text="#25874 opened 2 days ago by bdewater" />
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:maxLines="2"
+                android:text="@{viewmodel.issueTitle}"
+                android:textColor="@android:color/black"
+                android:textSize="16sp"
+                tools:text="Allow MessageEncryptor to take advantage authenticated encryption modes #25874" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:maxLines="1"
+                android:text="@{viewmodel.reporterName}"
+                android:textColor="@android:color/darker_gray"
+                tools:text="#25874 opened 2 days ago by bdewater" />
+
+            <com.ms.square.android.expandabletextview.ExpandableTextView
+                android:id="@+id/expand_text_view"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@{viewmodel.description}"
+                expandableTextView:animDuration="200"
+                expandableTextView:maxCollapsedLines="4">
+
+                <TextView
+                    android:id="@id/expandable_text"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginRight="10dp"
+                    android:textColor="#666666"
+                    android:textSize="16sp" />
+
+                <ImageButton
+                    android:id="@id/expand_collapse"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="right|bottom"
+                    android:background="@android:color/transparent"
+                    android:padding="16dp" />
+            </com.ms.square.android.expandabletextview.ExpandableTextView>
+        </LinearLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@color/colorPrimaryDark" />
     </LinearLayout>
 </layout>

@@ -2,14 +2,34 @@
 <layout xmlns:android="http://schemas.android.com/apk/res/android">
 
     <data class="RepositoryDataBinding">
+
         <variable
             name="viewmodel"
-            type="com.android.upgrad.RepositoryViewModel"/>
+            type="com.android.upgrad.RepositoryViewModel" />
     </data>
 
-    <android.support.v7.widget.RecyclerView
-        android:id="@+id/openIssuesList"
+    <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent" />
+        android:layout_height="wrap_content">
+
+        <ProgressBar
+            android:id="@+id/progressBar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true" />
+
+        <TextView
+            android:id="@+id/connectionProblem"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:visibility="gone"
+            android:layout_centerInParent="true"
+            android:text="@string/connectivity_problem" />
+
+        <android.support.v7.widget.RecyclerView
+            android:id="@+id/openIssuesList"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
+    </RelativeLayout>
 
 </layout>
